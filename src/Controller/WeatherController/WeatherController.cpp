@@ -32,7 +32,7 @@ void WeatherController::getWeatherData(bool threadCreated /* = false*/) {
         DynamicJsonDocument weatherDoc(35 * 1024);
         weatherAPISuccess = postToWeatherAPI(weatherDoc);
 
-        DynamicJsonDocument geocodingDoc(2 * 1024);
+        DynamicJsonDocument geocodingDoc(5 * 1024);
         geocodingAPISuccess = postToGeocodingAPI(geocodingDoc);
 
         parseWeatherSuccess = parseWeatherDoc(weatherDoc.as<JsonObject>());
